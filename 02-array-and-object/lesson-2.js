@@ -85,14 +85,14 @@ console.log(newArr)
 //     } else return 'Hello someone!'
 // }
 
-let name = 'Karina'
 
 let sayHello = (name) => {
     if (name) {
         console.log(`Hello ${name}!`)
     } else console.log('Hello someone!')
 }
-
+sayHello('Karina')
+sayHello('')
 
 /*
 Задание #5
