@@ -32,13 +32,14 @@ console.log(b % 2 == 0 ? 'Чётное' : 'Нечётное')
 */
 
 function multipleNums() {
-    numbers = []
+    let numbers = []
     for (let i = 0; numbers.length < 1000; i++) {
         // if(i % 2 != 0) {
         //     numbers.push(i)
         // } else ''
         if (i % 12 == 0) {
             numbers.push(i)
+            console.log(numbers[i])
         }
         else ''
     }
@@ -59,7 +60,8 @@ function multipleNums() {
 
 let oldArr = [1, 10, 15, -100, -23, 19, 15032]
 
-let newArr = oldArr.map(num => num * 0.25 + num)
+let newArr = oldArr.map(num => num * 1.25)
+// let newArr = oldArr.map(num => num * 0.25 + num)
 
 console.log(oldArr)
 console.log(newArr)
@@ -83,11 +85,14 @@ console.log(newArr)
 //     } else return 'Hello someone!'
 // }
 
+let name = 'Karina'
+
 let sayHello = (name) => {
-    if (name !== '') {
-        return `Hello ${name}!`
-    } else return 'Hello someone!'
+    if (name) {
+        console.log(`Hello ${name}!`)
+    } else console.log('Hello someone!')
 }
+
 
 /*
 Задание #5
@@ -106,7 +111,7 @@ console.log(calc(4, 2, '/')); // 2
 
 */
 
-var operators = {
+const operators = {
     '+': function (a, b) { return a + b; },
     '-': function (a, b) { return a - b; },
     '*': function (a, b) { return a * b; },
@@ -155,12 +160,15 @@ console.log(category) // Детский
 let j = 9
 let k = 3
 
-let l = 'Max number is '
+let l = j > k ? j : k
+console.log(l)
 
-switch(Math.max(j, k)){
-    case j: l += "j = " + j; break;
-    case k: l += "k = " + k; break;
-}
-l += ".";
+// let l = 'Max number is '
 
-console.log(l) // Max number is j = 9.
+// switch(Math.max(j, k)){
+//     case j: l += "j = " + j; break;
+//     case k: l += "k = " + k; break;
+// }
+// l += ".";
+
+// console.log(l) // Max number is j = 9.
