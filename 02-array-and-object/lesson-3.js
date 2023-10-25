@@ -28,19 +28,18 @@ let ann = {
 	pet: 'dog'
 }
 
-function userInfo() {
-	console.log(`My name is ${john.name}, I'm ${john.age} years old, I've got a ${john.pet}`)
-	console.log(`My name is ${ann['name']}, I'm ${ann['age']} years old, I've got a ${ann['pet']}`)
+function userInfo(person) {
+	console.log(`My name is ${person.name}, I'm ${person.age} years old, I've got a ${person.pet}`)
 }
-userInfo()
+userInfo(ann)
+userInfo(john)
 
-function incrementAge() {
-	let annAgeIncrement = ann.age += 1
-	let johnAgeIncrement = john.age +=1
-	console.log(annAgeIncrement)
-	console.log(johnAgeIncrement)
+function incrementAge(person) {
+	let ageIncrement = person.age += 1
+	console.log(ageIncrement)
 }
-incrementAge()
+incrementAge(ann)
+incrementAge(john)
 
 
 /*
@@ -53,7 +52,15 @@ incrementAge()
 const arr = [1, 50, 20, 75, 90]
 
 function sum(array) {
-	return array.reduce((acc, number) => acc + number)
+	// return array.reduce((acc, number) => acc + number)
+
+	// 2 вариант
+	let sum = 0
+	for (let i = 0; i<array.length; i++) {
+		sum += array[i]
+	}
+	return sum
+
 }
  
 sum(arr) // 236
@@ -92,6 +99,9 @@ const names = ['Bob', 'Klar', 'Petya', 'Ilya', 'Viktoriya'];
 */
 
 
+
+/* *** СТАРЫЙ МЕТОД ***
+
 const list = document.getElementById('list')
 
 const names = ['Bob', 'Klar', 'Petya', 'Ilya', 'Viktoriya']
@@ -113,7 +123,23 @@ function getNames(name, idx) {
 		</ul>
 	`
 }
+***/
 
+
+// Вариант 2
+
+const names = ['Bob', 'Klar', 'Petya', 'Ilya', 'Viktoriya']
+
+function generateHTML(names) {
+	let html = `<ul>`
+
+	names.forEach(name => {
+		html += `<li>` + name + `</li>`
+	});
+	html += `</ul>`
+	return html
+}
+console.log(generateHTML(names))
 
 
 /*
