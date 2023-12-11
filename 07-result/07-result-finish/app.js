@@ -3,8 +3,8 @@
 //   year: 2023,
 // }
 
-// const json = JSON.stringify(car)
-// const parsed = JSON.parse(json)
+// const json = JSON.stringify(car) из объекта в JSON
+// const parsed = JSON.parse(json) из JSON в объект
 
 // console.log(json)
 // console.log(parsed)
@@ -14,6 +14,8 @@ const filter = document.querySelector('#filter')
 let USERS = []
 
 filter.addEventListener('input', (event) => {
+  // Также можно использовать деструктуризацию для сокращения кода (вместо const value = event.target.value):
+  // const { value } = event.target
   const value = event.target.value.toLowerCase()
   const filteredUsers = USERS.filter((user) =>
     user.name.toLowerCase().includes(value)
